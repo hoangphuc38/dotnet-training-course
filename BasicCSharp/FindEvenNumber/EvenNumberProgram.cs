@@ -17,8 +17,8 @@ namespace BasicCSharp.FindEvenNumber
             {
                 Console.Write(number + " ");
             }
-            Console.WriteLine();
 
+            Console.WriteLine();
             FindEvenNumbers(numbers);
         }
 
@@ -36,6 +36,7 @@ namespace BasicCSharp.FindEvenNumber
                     Console.Write(numbers[i] + " ");
                 }
             }
+
             Console.WriteLine();
         }
     }

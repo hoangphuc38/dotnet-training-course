@@ -9,6 +9,7 @@ namespace BasicCSharp.TemperatureConverter
     public class ConvertProgram
     {
         private TemperatureConverter _converter = new TemperatureConverter();
+
         public void Main()
         {
             Console.WriteLine("Please select the convertor direction");
@@ -16,10 +17,8 @@ namespace BasicCSharp.TemperatureConverter
             Console.WriteLine("2. From Kevin to Celsius.");
             Console.Write("==> ");
 
-           
-            string selection = Console.ReadLine();
-
             //Check if selection is null, empty or out of range [1, 2]
+            string selection = Console.ReadLine();
             while (string.IsNullOrEmpty(selection) || Convert.ToInt32(selection) > 2)
             {
                 Console.Write("Please select a convertor: ");

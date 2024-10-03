@@ -2,16 +2,22 @@
 
 using BasicCSharp.FindEvenNumber;
 using BasicCSharp.TemperatureConverter;
+using BasicCSharp.TransferText;
 
 //Program that solves problem of converting between Celsius and Kevin
-ConvertProgram program1 = new ConvertProgram();
-program1.Main();
+ConvertProgram convertProgram = new ConvertProgram();
+convertProgram.Main();
 
 Console.WriteLine();
-Console.WriteLine("--------------------------------------");
-Console.WriteLine();
+Console.WriteLine("--------------------------------------\n");
 
 //Program that solves problem of finding even number in an array
-EvenNumberProgram program2 = new EvenNumberProgram();
-program2.Main();
+EvenNumberProgram evenNumberProgram = new EvenNumberProgram();
+evenNumberProgram.Main();
+
+Console.WriteLine("--------------------------------------\n");
+
+//Program that solve of problem of transferring a string between being upper and being lower
+TransferTextProgram transferTextProgram = new TransferTextProgram();
+transferTextProgram.Main();
 
