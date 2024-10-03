@@ -1,36 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using BasicCSharp.FindEvenNumber;
+using BasicCSharp.TemperatureConverter;
 
-using BasicCSharp;
+//Program that solves problem of converting between Celsius and Kevin
+ConvertProgram program1 = new ConvertProgram();
+program1.Main();
 
-TemperatureConverter converter = new TemperatureConverter();
+Console.WriteLine();
+Console.WriteLine("--------------------------------------");
+Console.WriteLine();
 
-Console.WriteLine("Please select the convertor direction");
-Console.WriteLine("1. From Celsius to Kevin.");
-Console.WriteLine("2. From Kevin to Celsius.");
-Console.Write("==> ");
+//Program that solves problem of finding even number in an array
+EvenNumberProgram program2 = new EvenNumberProgram();
+program2.Main();
 
-string selection = Console.ReadLine();
-
-double F, C = 0;
-
-switch (selection)
-{
-    case "1":
-        Console.Write("Please enter the Celsius temperature: ");
-        F = converter.CelsiusToKevin(Console.ReadLine());
-        Console.WriteLine("Temperature in Kevin: {0:F2}", F);
-        break;
-    case "2":
-        Console.Write("Please enter the Fahrenheit temperature: ");
-        C = converter.KevinToCelsius(Console.ReadLine());
-        Console.WriteLine("Temperature in Celsius: {0:F2}", C);
-        break;
-    default:
-        Console.WriteLine("Please select a convertor.");
-        break;
-}
-
-// Keep the console window open in debug mode.
-Console.WriteLine("Press any key to exit.");
-Console.ReadKey();

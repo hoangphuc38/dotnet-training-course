@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicCSharp
+namespace BasicCSharp.TemperatureConverter
 {
     public class TemperatureConverter
     {
@@ -15,7 +15,7 @@ namespace BasicCSharp
         /// <returns>After calculating Kevin degree, return Kevin degree in Double format</returns>
         public double CelsiusToKevin(string temperatureCelsius)
         {
-            double celsius = Double.Parse(temperatureCelsius);
+            double celsius = double.Parse(temperatureCelsius);
 
             double kevin = celsius + 273.15;
 
@@ -29,7 +29,7 @@ namespace BasicCSharp
         /// <returns>After calculating Celcius degree, return Celsius degree in Double format</returns>
         public double KevinToCelsius(string temperatureKevin)
         {
-            double kevin = Double.Parse(temperatureKevin);
+            double kevin = double.Parse(temperatureKevin);
 
             double celsius = kevin - 273.15;
 
