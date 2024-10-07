@@ -38,7 +38,7 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input id="editButton" type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -47,6 +47,21 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
+<script type="text/javascript">
+    document.getElementById("editButton").onclick = function (event) {
+        var userConfirmed = confirm("Do you want to proceed?");
+        if (userConfirmed) {
+            // User clicked "Yes"
+            // Excute the function below
+            window.location.href = '@Url.Action("Edit", "Movies")';
+        } else {
+            // User clicked "No"
+            // Do nothing, the page will remain the same
+            event.preventDefault();
+        }
+    };
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

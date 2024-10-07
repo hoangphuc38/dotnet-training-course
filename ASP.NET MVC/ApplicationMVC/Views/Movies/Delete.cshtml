@@ -39,7 +39,22 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input id="deleteButton" type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
+<script type="text/javascript">
+    document.getElementById("deleteButton").onclick = function (event) {
+        var userConfirmed = confirm("Do you want to proceed?");
+        if (userConfirmed) {
+            // User clicked "Yes"
+            // Excute the function below
+            window.location.href = '@Url.Action("DeleteConfirmed", "Movies")';
+        } else {
+            // User clicked "No"
+            // Do nothing, the page will remain the same
+            event.preventDefault();
+        }
+    };
+</script>
