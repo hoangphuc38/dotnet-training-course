@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ApplicationMVC.Data;
@@ -31,6 +27,7 @@ namespace ApplicationMVC.Controllers
             IQueryable<string> genreQuery = from m in _context.Movie
                                             orderby m.Genre
                                             select m.Genre;
+            
             var movies = from m in _context.Movie
                          select m;
 
@@ -56,9 +53,10 @@ namespace ApplicationMVC.Controllers
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            // Validate id must not be negative or 0
+            if (id < 1)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             var movie = await _context.Movie
@@ -90,12 +88,19 @@ namespace ApplicationMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 
         // GET: Movies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            // Validate id must not be negative or 0
+            if (id < 1)
+            {
+                return BadRequest();
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -106,6 +111,7 @@ namespace ApplicationMVC.Controllers
             {
                 return NotFound();
             }
+
             return View(movie);
         }
 
@@ -141,17 +147,13 @@ namespace ApplicationMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(movie);
         }
 
         // GET: Movies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var movie = await _context.Movie
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
