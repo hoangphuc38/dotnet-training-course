@@ -133,5 +133,27 @@ namespace EFDatabaseFirst
                 db.SaveChanges();
             }
         }
+
+        /// <summary>
+        /// Get customers' information by executing stored procedure
+        /// </summary>
+        public void GetCustomerInformation()
+        {
+            using (var db = new MovieDBEntities())
+            {
+                //Execute stored procedure
+                var customerList = db.CustomerInformation();
+
+                Console.WriteLine("- All customers: ");
+                foreach (var customer in customerList)
+                {
+                    Console.WriteLine("Customer ID: {0}, Name: {1}, Address: {2} ",
+                           customer.CustomerID, customer.CustomerName, customer.Address);
+                }
+
+                Console.WriteLine("\n\nClick Enter to continue\n");
+                Console.ReadKey();
+            }
+        }
     }
 }

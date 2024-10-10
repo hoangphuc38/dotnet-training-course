@@ -14,6 +14,7 @@ namespace EFDatabaseFirst
             Client client = new Client();
             client.GetMovieList();
             client.GetGenreList();
+            client.GetCustomerInformation();
 
             Console.Write("Nhap ten phim can tim: ");
             string movieName = Console.ReadLine();
