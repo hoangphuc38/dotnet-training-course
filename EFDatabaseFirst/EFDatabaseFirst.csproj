@@ -110,19 +110,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <Content Include="DatabaseFirstModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseFirstModel.Context.cs</LastGenOutput>
       <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
+      <LastGenOutput>DatabaseFirstModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DatabaseFirstModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DatabaseFirstModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseFirstModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,9 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("EFDatabaseFirst")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TMA")]
 [assembly: AssemblyProduct("EFDatabaseFirst")]
-[assembly: AssemblyCopyright("Copyright © TMA 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
